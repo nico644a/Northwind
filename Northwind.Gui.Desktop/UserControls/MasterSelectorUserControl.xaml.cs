@@ -22,7 +22,7 @@ namespace Northwind.Gui.Desktop.UserControls
     public partial class MasterSelectorUserControl: UserControl
     {
         private List<ToggleButton> toggleButtons;
-
+        private HrUserControl hrUserControl;
 
         public MasterSelectorUserControl()
         {
@@ -58,6 +58,11 @@ namespace Northwind.Gui.Desktop.UserControls
         private void ToggleButton_HR_Click(object sender, RoutedEventArgs e)
         {
             Toggle(sender as ToggleButton);
+            if(hrUserControl is null)   // only null the first time - i.e. only one HrUserControl object is ever created, so when the button is clicked, state is preserved.
+            {
+                hrUserControl = new HrUserControl();
+            }
+            MainWindow.Instance.SetDetailsUserControlTo(hrUserControl);
         }
 
         private void ToggleButton_Products_Click(object sender, RoutedEventArgs e)
