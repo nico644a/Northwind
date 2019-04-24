@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Gui.Desktop", "Northwind.Gui.Desktop\Northwind.Gui.Desktop.csproj", "{4C111054-F0DB-4DB5-9D77-68B7CF565D53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Entities", "Northwind.Entities\Northwind.Entities.csproj", "{459516F1-47FC-4AA7-A7A5-5EA4CA266193}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4C111054-F0DB-4DB5-9D77-68B7CF565D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C111054-F0DB-4DB5-9D77-68B7CF565D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C111054-F0DB-4DB5-9D77-68B7CF565D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{459516F1-47FC-4AA7-A7A5-5EA4CA266193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459516F1-47FC-4AA7-A7A5-5EA4CA266193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459516F1-47FC-4AA7-A7A5-5EA4CA266193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459516F1-47FC-4AA7-A7A5-5EA4CA266193}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
