@@ -24,5 +24,11 @@ namespace Northwind.Gui.Desktop
         {
             InitializeComponent();
         }
+
+        private void MenuItem_About_Click(object sender, RoutedEventArgs e)
+        {
+            string text = $"Assembly version: {System.Reflection.Assembly.GetExecutingAssembly().GetName().Version}";
+            MessageBox.Show(text, "Om Northwind", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }
