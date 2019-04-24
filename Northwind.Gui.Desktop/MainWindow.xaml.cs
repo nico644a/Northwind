@@ -23,6 +23,7 @@ namespace Northwind.Gui.Desktop
         public MainWindow()
         {
             InitializeComponent();
+            masterSelectorUserControl.Content = new UserControls.MasterSelectorUserControl();
         }
 
         private void MenuItem_About_Click(object sender, RoutedEventArgs e)
