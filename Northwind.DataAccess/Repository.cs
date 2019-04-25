@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Northwind.Entities;
 
 namespace Northwind.DataAccess
 {
@@ -39,7 +40,7 @@ namespace Northwind.DataAccess
         #endregion
 
 
-        #region Methods
+        #region Helper Methods
         /// <summary>
         /// Executes the provided SQL statement and returns data wrapped in a data set, if any.
         /// </summary>
@@ -103,6 +104,53 @@ namespace Northwind.DataAccess
             {
                 return (false, e);
             }
+        }
+
+        /// <summary>
+        /// Extract all data relevant to an employee from a dat row object, and return an employee object.
+        /// </summary>
+        /// <param name="dataRow"></param>
+        /// <returns></returns>
+        private static Employee ExtractFrom(DataRow dataRow)
+        {
+            int id = (int)dataRow["EmployeeID"];
+            string privatePhone = (string)dataRow["HomePhone"];
+
+            ContactInformation contactInformation = new ContactInformation(String.Empty, String.Empty, privatePhone, String.Empty);
+            Employee employee = new Employee() { Id = id, ContactInformation = contactInformation };
+            return employee;
+        }
+        #endregion
+
+
+        #region Repository Methods
+        /// <summary>
+        /// gets all employees
+        /// </summary>
+        /// <returns>A list of all employees</returns>
+        public List<Employee> GetAllEmployees()
+        {
+            List<Employee> employees = new List<Employee>();
+            string sql = "SELECT * FROM Employees";
+            DataSet resultSet;
+            try
+            {
+                resultSet = Execute(sql);
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+
+            if(resultSet.Tables.Count > 0 && resultSet.Tables[0].Rows.Count > 0)
+            {
+                foreach(DataRow dataRow in resultSet.Tables[0].Rows)
+                {
+                    Employee employee = ExtractFrom(dataRow);
+                    employees.Add(employee);
+                }
+            }
+            return employees;
         }
         #endregion
     }
