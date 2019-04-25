@@ -206,10 +206,19 @@ namespace Northwind.Entities
                 try
                 {
                     MailAddress mailAddress = new MailAddress(mail);
+                    string domainPart = mailAddress.Address.Split('@')[1];
+                    if(!domainPart.Contains("."))
+                    {
+                        return (false, "Mail address is missing a dot (.) sin the domain part.");
+                    }
                 }
-                catch(FormatException)
+                catch(FormatException f)
                 {
-                    return (false, "Incorrect format");
+                    return (false, $"Incorrect format: {f.Message}");
+                }
+                catch(Exception e)
+                {
+                    return (false, $"Mail validation error: {e.Message}");
                 }
                 return (true, String.Empty);
             }
@@ -233,15 +242,15 @@ namespace Northwind.Entities
             else
             {
                 phone = phone.Trim();
-                if(!phone.StartsWith("+") || !Char.IsNumber(phone[0]))
+                if(!(phone.StartsWith("+") || Char.IsNumber(phone[0])))
                 {
                     return (false, "Incorrect format. Must start with either + or a number");
                 }
                 else
                 {
-                    foreach(char c in phone)
+                    for(int i = 1; i < phone.Length; i++)
                     {
-                        if(!Char.IsNumber(c) || c != ' ')
+                        if(!(Char.IsNumber(phone[i]) || phone[i] == ' '))
                         {
                             return (false, "Contains invalid character(s). Must only contain numbers separated by space character");
                         }
