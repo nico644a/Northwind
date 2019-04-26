@@ -9,6 +9,7 @@ namespace Northwind.Entities
     public class Employee
     {
         public int Id { get; set; }
+        public string Firstname => "Mads"; 
         public ContactInformation ContactInformation { get; set; }
     }
 }

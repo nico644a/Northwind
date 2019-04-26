@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         d:DesignWidth="1900"
         d:DesignHeight="1000"
-        Title="Nortwind"
+        Title="Northwind Administration System"
         WindowStyle="SingleBorderWindow"
         WindowState="Maximized">
   <Window.Resources>

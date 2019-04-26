@@ -242,15 +242,15 @@ namespace Northwind.Entities
             else
             {
                 phone = phone.Trim();
-                if(!(phone.StartsWith("+") || Char.IsNumber(phone[0])))
+                if(!(phone.StartsWith("+") || phone.StartsWith("(") || Char.IsNumber(phone[0])))
                 {
-                    return (false, "Incorrect format. Must start with either + or a number");
+                    return (false, "Incorrect format. Must start with either +, ( or a number");
                 }
                 else
                 {
                     for(int i = 1; i < phone.Length; i++)
                     {
-                        if(!(Char.IsNumber(phone[i]) || phone[i] == ' '))
+                        if(!(Char.IsNumber(phone[i]) || phone[i] == ' ' || phone[i] == ')' || phone[i] == '-'))
                         {
                             return (false, "Contains invalid character(s). Must only contain numbers separated by space character");
                         }
