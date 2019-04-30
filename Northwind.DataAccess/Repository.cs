@@ -125,7 +125,7 @@ namespace Northwind.DataAccess
 
         #region Repository Methods
         /// <summary>
-        /// gets all employees
+        /// Gets all employees.
         /// </summary>
         /// <returns>A list of all employees</returns>
         public List<Employee> GetAllEmployees()

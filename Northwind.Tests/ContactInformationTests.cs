@@ -12,7 +12,7 @@ namespace Northwind.Entities.Tests
     public class ContactInformationTests
     {
         [TestMethod()]
-        public void ContactInformationInitializationSucceedsTest()
+        public void ContactInformationInitializationSucceeds()
         {
             // Arrange:
             string privatePhone = "3334 4900";
@@ -29,7 +29,7 @@ namespace Northwind.Entities.Tests
 
         [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
-        public void ContactInformationInitializationFailsTest1()
+        public void ContactInformationInitializationFails()
         {
             // Arrange:
             string privatePhone = "3334 4900";

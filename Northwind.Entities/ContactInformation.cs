@@ -206,10 +206,10 @@ namespace Northwind.Entities
                 try
                 {
                     MailAddress mailAddress = new MailAddress(mail);
-                    string domainPart = mailAddress.Address.Split('@')[1];
+                    string domainPart = mailAddress.Host/*Address.Split('@')[1]*/;
                     if(!domainPart.Contains("."))
                     {
-                        return (false, "Mail address is missing a dot (.) sin the domain part.");
+                        return (false, "Mail address is missing a dot (.) in the domain part.");
                     }
                 }
                 catch(FormatException f)
