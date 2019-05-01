@@ -11,5 +11,7 @@ namespace Northwind.Entities
         public int Id { get; set; }
         public string Firstname => "Mads"; 
         public ContactInformation ContactInformation { get; set; }
+        
+        
     }
 }

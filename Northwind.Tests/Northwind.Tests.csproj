@@ -53,6 +53,7 @@
     <Compile Include="ContactInformationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryTests.cs" />
+    <Compile Include="ValidationsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -66,6 +67,10 @@
     <ProjectReference Include="..\Northwind.Entities\Northwind.Entities.csproj">
       <Project>{459516F1-47FC-4AA7-A7A5-5EA4CA266193}</Project>
       <Name>Northwind.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Northwind.Utils\Northwind.Utils.csproj">
+      <Project>{B7750165-5141-4F17-BF4C-BEB78BD2A005}</Project>
+      <Name>Northwind.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

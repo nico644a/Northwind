@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Services", "North
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Tests", "Northwind.Tests\Northwind.Tests.csproj", "{7DB35669-43A1-4073-A5DA-E5E875BB4FB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Utils", "Northwind.Utils\Northwind.Utils.csproj", "{B7750165-5141-4F17-BF4C-BEB78BD2A005}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7DB35669-43A1-4073-A5DA-E5E875BB4FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DB35669-43A1-4073-A5DA-E5E875BB4FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DB35669-43A1-4073-A5DA-E5E875BB4FB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7750165-5141-4F17-BF4C-BEB78BD2A005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7750165-5141-4F17-BF4C-BEB78BD2A005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7750165-5141-4F17-BF4C-BEB78BD2A005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7750165-5141-4F17-BF4C-BEB78BD2A005}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
