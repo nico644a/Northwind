@@ -42,9 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="Currency.cs" />
     <Compile Include="ContactInformation.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Northwind.Utils\Northwind.Utils.csproj">
+      <Project>{b7750165-5141-4f17-bf4c-beb78bd2a005}</Project>
+      <Name>Northwind.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

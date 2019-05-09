@@ -114,10 +114,24 @@ namespace Northwind.DataAccess
         private static Employee ExtractFrom(DataRow dataRow)
         {
             int id = (int)dataRow["EmployeeID"];
+            string lastname = (string)dataRow["LastName"];
+            string firstname = (string)dataRow["FirstName"];
+            string title = (string)dataRow["Title"];
+            string titleofcourtesy = (string)dataRow["TitleOfCourtesy"];
+            DateTime birthdate = (DateTime)dataRow["BirthDate"];
+            DateTime hiredate = (DateTime)dataRow["HireDate"];
+            string streetNumber = (string)dataRow["Address"];
+            string city = (string)dataRow["City"];
+            string postalCode = (string)dataRow["PostalCode"];
+            string country = (string)dataRow["Country"];
             string privatePhone = (string)dataRow["HomePhone"];
+            string privateEmail = (string)dataRow["HomeEmail"];
+            string workPhone = (string)dataRow["WorkPhone"];
+            string workEmail = (string)dataRow["WorkEmail"];
 
-            ContactInformation contactInformation = new ContactInformation(String.Empty, String.Empty, privatePhone, String.Empty);
-            Employee employee = new Employee() { Id = id, ContactInformation = contactInformation };
+            ContactInformation contactInformation = new ContactInformation(privatePhone, privateEmail, workPhone, workEmail);
+            Address address = new Address(streetNumber, city, postalCode, country);
+            Employee employee = new Employee(id, lastname, firstname, title, titleofcourtesy, birthdate, hiredate, address, contactInformation);
             return employee;
         }
         #endregion
@@ -151,6 +165,34 @@ namespace Northwind.DataAccess
                 }
             }
             return employees;
+        }
+
+        public void SaveEContactInformationEmployee(Employee employee)
+        {
+            string sql = $"UPDATE Employees" +
+                $"SET HomePhone ='{employee.ContactInformation.PrivatePhone}', HomeEmail = '{employee.ContactInformation.PrivateEmail}', WorkPhone = '{employee.ContactInformation.WorkPhone}', WorkEmail = '{employee.ContactInformation.WorkEmail}'" +
+                $"WHERE EmployeeID = '{employee.Id}'";
+        }
+
+        public void UpdateContactInformationEmployee(Employee employee)
+        {
+            string sql = $"UPDATE Employees" +
+                $"SET HomePhone ='{employee.ContactInformation.PrivatePhone}', HomeEmail = '{employee.ContactInformation.PrivateEmail}', WorkPhone = '{employee.ContactInformation.WorkPhone}', WorkEmail = '{employee.ContactInformation.WorkEmail}'" +
+                $"WHERE EmployeeID = '{employee.Id}'";
+        }
+
+        public void SaveAdressEmployee(Employee employee)
+        {
+            string sql = $"UPDATE Employees" +
+                $"SET Adress = '{employee.Address.StreetNumber}', City = '{employee.Address.City}', PostalCode = '{employee.Address.PostalCode}'¨, Country = {employee.Address.Country}" +
+                $"WHERE EmployeeID = '{employee.Id}';";
+        }
+
+        public void UpdateAdressEmployee(Employee employee)
+        {
+            string sql = $"UPDATE Employees" +
+                $"SET Adress = '{employee.Address.StreetNumber}', City = '{employee.Address.City}', PostalCode = '{employee.Address.PostalCode}'¨, Country = {employee.Address.Country}" +
+                $"WHERE EmployeeID = '{employee.Id}';";
         }
         #endregion
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Northwind.Utils
 {
@@ -10,9 +11,12 @@ namespace Northwind.Utils
     {
         public static bool TextOnly(string s)
         {
-            if(string.IsNullOrWhiteSpace(s))
+            Regex regexCheck = new Regex("^[a-zA-ZæÆøØåÅ]*$");
+            if(!regexCheck.IsMatch(s))
+            {
                 return false;
-            return s.All(c => Char.IsLetter(c));
+            }
+            return true;
         }
 
         public static bool TextOnlySentence(string s)
@@ -25,7 +29,17 @@ namespace Northwind.Utils
             return true;
         }
 
-        
+        public static bool TextAndNumbersOnly(string s)
+        {
+            Regex regexCheck = new Regex("^[0-9a-zA-ZæÆøØåÅ]*$");
+            if(!regexCheck.IsMatch(s))
+            {
+                return false;
+            }
+            return true;
+        }
+
+
         // Demonstrates the function like syntax for a method, and the ternary decision operator ? : and the LINQ ext. All() applied to an IEnummerable (in this case a String array).
         // Same result as above, just with a different and more compact syntax.
         public static bool TextOnlySentence2(string s)

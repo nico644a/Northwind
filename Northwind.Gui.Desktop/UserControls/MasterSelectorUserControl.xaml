@@ -18,7 +18,8 @@
   <Grid>
     <StackPanel x:Name="stackPanelForToggleButtons">
       <ToggleButton Content="HR"
-                    Click="ToggleButton_HR_Click" />
+                    Click="ToggleButton_HR_Click"
+                    Checked="ToggleButton_Checked" />
       <ToggleButton Content="Produkter"
                     Click="ToggleButton_Products_Click" />
       <ToggleButton Content="Ordrer"

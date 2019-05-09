@@ -61,6 +61,7 @@ namespace Northwind.Gui.Desktop.UserControls
             if(hrUserControl is null)   // only null the first time - i.e. only one HrUserControl object is ever created, so when the button is clicked, state is preserved.
             {
                 hrUserControl = new HrUserControl();
+                
             }
             MainWindow.Instance.SetDetailsUserControlTo(hrUserControl);
         }
@@ -68,6 +69,7 @@ namespace Northwind.Gui.Desktop.UserControls
         private void ToggleButton_Products_Click(object sender, RoutedEventArgs e)
         {
             Toggle(sender as ToggleButton);
+
         }
 
         private void ToggleButton_Invoices_Click(object sender, RoutedEventArgs e)
@@ -78,6 +80,11 @@ namespace Northwind.Gui.Desktop.UserControls
         private void ToggleButton_Orders_Click(object sender, RoutedEventArgs e)
         {
             Toggle(sender as ToggleButton);
+        }
+
+        private void ToggleButton_Checked(Object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
